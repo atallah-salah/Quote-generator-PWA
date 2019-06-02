@@ -1,0 +1,14 @@
+@import "navbar.css";
+@import "content.css";
+
+:root{
+  --primary: #292E2E;
+  --secondary: #019CB7;
+  --title: #019CB7;
+}
+
+body,html{
+  height: 100%;
+  width: 100%;
+}
+

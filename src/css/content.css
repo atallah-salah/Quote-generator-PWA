@@ -1,0 +1,16 @@
+.valign-wrapper.content{
+  height: 80% ;
+}
+
+.container .row .col.empty{
+  visibility: hidden;
+}
+
+
+#menu .waves-ripple{
+  background-color: var(--primary) !important;
+  left: 56% !important;
+  top: 56% !important;
+  height: 25% !important;
+  width: 25% !important;
+}

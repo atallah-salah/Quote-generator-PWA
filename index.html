@@ -4,29 +4,68 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Quote-generator-PWA</title>
+  <title>Quote-generator</title>
   <script src="./src/lib/materialize/materialize.min.js"></script>
   <link rel="stylesheet" href="./src/lib/materialize/materialize.min.css">
   <script src="./src/js/main.js"></script>
-</head>
-<body>
-  <nav> <!-- navbar content here  --> </nav>
+  <link href="./src/css/style.css" rel="stylesheet"></link>
 
-  <ul id="slide-out" class="sidenav">
-    <li><div class="user-view">
-      <div class="background">
-        <img src="images/office.jpg">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body class="cyan lighten-4">
+
+  <!-- top nav -->
+  <nav class="z-depth-0">
+    <div class="nav-wrapper container">
+      <a><span>Quote</span> generator</a>
+      <span class="right grey-text text-darken-1">
+        <i class="material-icons sidenav-trigger waves-effectr" data-target="side-menu">menu</i>
+      </span>
+    </div>
+  </nav>
+  <ul id='dropdown1' class='dropdown-content'>
+      <li><a href="#!">one</a></li>
+      <li><a href="#!">two</a></li>
+      <li class="divider" tabindex="-1"></li>
+      <li><a href="#!">three</a></li>
+      <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+      <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+    </ul>
+  <!-- side nav -->
+  <ul id="side-menu" class="sidenav side-menu">
+      <li><a class="subheader">Quote generator</a></li>
+      <li><a class="waves-effect">Set reminder notification</li>
+        <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a>
+          <!-- Dropdown Structure -->
+
+      <li><input type="date"></li>
+
+      <li><div class="divider"></div></li>
+      <li><a href="/pages/contact.html" class="waves-effect">
+        <i class="material-icons">mail_outline</i>Contact</a>
+      </li>
+    </ul>
+
+    <!-- content -->
+    <div class="container">
+      <div class="center-align row">
+          <div class="col s12 empty" ><h5>empty</h5></div>
+          <div class="col s12 empty"><h5>empty</h5></div>
+          <div class="col s12 "><span class="flow-text"><h5>Generate new quote</h5></span></div>
+          <div class="col s12 empty">empty</div>
+          <div class="col s12 "><a id="menu" class=" waves-effect waves-orange btn-floating btn-large cyan pulse"><i class="material-icons">autorenew</i></a></div>       
+          <div id="card-quote" class=" col s12 small card cyan lighten-1 scale-transition scale-out">
+              <div id="card-content-quote" class="card-content white-text scale-transition scale-out">
+                <span class="card-title">Quote</span>
+                <p>I am a very simple card. I am good at containing small bits of information.
+                I am convenient because I require little markup to use effectively.</p>
+              </div>
+              <div class="card-action">
+                <a href="#">This is a link</a>
+                <a href="#">This is a link</a>
+              </div>
+            </div>
       </div>
-      <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
-      <a href="#name"><span class="white-text name">John Doe</span></a>
-      <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
-    </div></li>
-    <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-    <li><a href="#!">Second Link</a></li>
-    <li><div class="divider"></div></li>
-    <li><a class="subheader">Subheader</a></li>
-    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-  </ul>
-  <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
 </body>
 </html>
