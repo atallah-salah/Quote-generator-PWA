@@ -23,7 +23,17 @@
       </span>
     </div>
   </nav>
-  <ul id='dropdown1' class='dropdown-content'>
+
+  <!-- side nav -->
+  <ul id="side-menu" class="sidenav side-menu">
+      <li><a class="subheader">Quote generator</a></li>
+      <li><a class="waves-effect">Set reminder notification</li>
+<li>
+    <!-- Dropdown Trigger -->
+    <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a>
+
+    <!-- Dropdown Structure -->
+    <ul id='dropdown1' class='dropdown-content'>
       <li><a href="#!">one</a></li>
       <li><a href="#!">two</a></li>
       <li class="divider" tabindex="-1"></li>
@@ -31,12 +41,7 @@
       <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
       <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
     </ul>
-  <!-- side nav -->
-  <ul id="side-menu" class="sidenav side-menu">
-      <li><a class="subheader">Quote generator</a></li>
-      <li><a class="waves-effect">Set reminder notification</li>
-        <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a>
-          <!-- Dropdown Structure -->
+</li>
 
       <li><input type="date"></li>
 
@@ -53,9 +58,9 @@
           <div class="col s12 empty"><h5>empty</h5></div>
           <div class="col s12 "><span class="flow-text"><h5>Generate new quote</h5></span></div>
           <div class="col s12 empty">empty</div>
-          <div class="col s12 "><a id="menu" class=" waves-effect waves-orange btn-floating btn-large cyan pulse"><i class="material-icons">autorenew</i></a></div>       
+          <div class="col s12 "><a id="menu" class=" waves-effect waves-orange btn-floating btn-large cyan pulse"><i class="material-icons load-data-rotate-icon start">autorenew</i></a></div>       
           <div id="card-quote" class=" col s12 small card cyan lighten-1 scale-transition scale-out">
-              <div id="card-content-quote" class="card-content white-text scale-transition scale-out">
+            <div id="card-content-quote" class="card-content white-text scale-transition scale-out">
                 <span class="card-title">Quote</span>
                 <p>I am a very simple card. I am good at containing small bits of information.
                 I am convenient because I require little markup to use effectively.</p>

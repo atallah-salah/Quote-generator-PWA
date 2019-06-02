@@ -14,3 +14,14 @@
   height: 25% !important;
   width: 25% !important;
 }
+
+.material-icons.load-data-rotate-icon.start{
+  animation-name:load-data-animation;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes load-data-animation {
+  0%   {transform:rotate(0deg)}
+  100% {transform:rotate(360deg)}
+}
