@@ -27,36 +27,29 @@
   <!-- side nav -->
   <ul id="side-menu" class="sidenav side-menu">
       <li><a class="subheader">Quote generator</a></li>
-      <li><a class="waves-effect">Set reminder notification</li>
-    <!-- Dropdown Trigger -->
-    <!-- <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a> -->
-
-    <!-- Dropdown Structure -->
-    <!-- <ul id='dropdown1' class='dropdown-content'>
-      <li><a href="#!">5 sec</a></li>
-      <li><a href="#!">5 minuate</a></li>
-      <li><a href="#!">30 minuate</a></li>
-      <li class="divider" tabindex="-1"></li>
-      <li><a href="#!">1 hour</a></li>
-      <li><a href="#!">5 hours</a></li>  
-      <li><a href="#!">12 hour</a></li>  
-      <li class="divider" tabindex="-1"></li>
-      <li><a href="#!">1 day</a></li>
-      <li><a href="#!">3 days</a></li>  
-      <li><a href="#!">12 hour</a></li>  
-      <li><a href="#!">three</a></li>
-      <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
-      <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
-    </ul> -->
-    <div class="input-field col s12">
+      <li><a class="waves-effect">Set reminder notification</a></li>
+    <!-- dropdown -->
+    <li><div class="input-field time-notification">
       <select>
-        <option value="" disabled selected>Choose your option</option>
-        <option value="1">Option 1</option>
-        <option value="2">Option 2</option>
-        <option value="3">Option 3</option>
+        <option data-time="5,m" value="" disabled selected>Choose your option</option>
+        <optgroup label="minuate">
+        <option data-time="5,s" value="1">5 sec test</option>
+        <option data-time="5,m" value="2">5 min</option>
+        <option data-time="30,m" value="2">30 min</option>
+      </optgroup>
+      <optgroup label="hours">
+        <option data-time="1,h" value="3">1 hour</option>
+        <option data-time="3,h" value="4">3 hours</option>
+        <option data-time="10,h" value="4">10 hours</option>
+      </optgroup>
+      <optgroup label="days">
+          <option data-time="1,d" value="3">1 day</option>
+          <option data-time="3,d" value="4">3 days</option>
+          <option data-time="7,d" value="4">7 days</option>
+        </optgroup>
       </select>
-      <label>Materialize Select</label>
-    </div>
+      <label>each</label>
+    </div></li>
 
 
       <li><div class="divider"></div></li>
