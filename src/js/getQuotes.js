@@ -80,14 +80,12 @@ function getRandomQuote(title, callback) {
   });
 }
 
-function renderQuote() {
+function renderQuote(callBackfunc) {
   getRandomStart(function(c) {
-    getRandomName(c, function(p) {
-      getRandomQuote(p, function(x) {
-        $("#quotes").text(x);
-        $("#tweet").on("click", sendTweet(x, p));
+    getRandomName(c, function(author) {
+      getRandomQuote(author, function(quote) {
+        callBackfunc(quote,author)
       });
-      $("#author").text("-" + p);
     });
   });
 }

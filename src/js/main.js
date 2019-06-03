@@ -12,7 +12,9 @@ document.addEventListener("DOMContentLoaded", function() {
   document.querySelector("#menu").addEventListener("click", () => {
     document.querySelector("#card-quote").classList.remove("scale-out");
     document.querySelector("#card-content-quote").classList.toggle("scale-out");
-    // console.log(888,renderQuote())
+    renderQuote((...args)=>{
+      console.log({...args});
+    })
   });
 });
 
