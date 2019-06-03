@@ -6,7 +6,6 @@
   visibility: hidden;
 }
 
-
 #menu .waves-ripple{
   background-color: var(--primary) !important;
   left: 56% !important;
@@ -30,4 +29,13 @@
   margin: 30px !important;
   margin-top: 0px !important;
 
+}
+
+
+.card.scale-transition{
+  transition-duration: .6s !important;
+
+}
+.card.scale-transition .card-content{
+  transition-duration: .4s !important;
 }

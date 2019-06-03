@@ -5,11 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Quote-generator</title>
+  <!-- libs -->
   <script src="./src/lib/materialize/materialize.min.js"></script>
+  <script src="./src/lib/jquery/jquery.min.js"></script>
   <link rel="stylesheet" href="./src/lib/materialize/materialize.min.css">
+  <!-- scripts -->
+  <script src="./src/js/getQuotes.js"></script>
   <script src="./src/js/main.js"></script>
+  <!-- styles -->
   <link href="./src/css/style.css" rel="stylesheet"></link>
-
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body class="cyan lighten-4">
@@ -31,7 +35,7 @@
     <!-- dropdown -->
     <li><div class="input-field time-notification">
       <select>
-        <option data-time="5,m" value="" disabled selected>Choose your option</option>
+        <option data-time="5,m" value="" disabled selected>Choose each</option>
         <optgroup label="minuate">
         <option data-time="5,s" value="1">5 sec test</option>
         <option data-time="5,m" value="2">5 min</option>
@@ -48,7 +52,6 @@
           <option data-time="7,d" value="4">7 days</option>
         </optgroup>
       </select>
-      <label>each</label>
     </div></li>
 
 
