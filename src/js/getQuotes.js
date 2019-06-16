@@ -4,7 +4,7 @@ let quteCount = localStorage.getItem('quteCount') || 0;
 let quotes = localStorage.getItem('quotes') && localStorage.getItem('quotes').split('//,') || getAllQuotes(groupCount);
 
 const getQuote = ()=> {
-  if(quteCount>=100){
+  if(quteCount>=99){
     quteCount=0;
     localStorage.setItem('quteCount',quteCount)
     localStorage.setItem('groupCount',groupCount++)
@@ -12,7 +12,13 @@ const getQuote = ()=> {
   }
 
   localStorage.setItem('quteCount',quteCount++)
-  return quotes[quteCount].split('\n');
+  console.log(quotes,quteCount);
+  console.log(quotes[quteCount]);
+
+  if(quotes && quotes[quteCount]){
+    
+    return quotes[quteCount].split('\n');
+  }
 }
 
 
@@ -29,6 +35,7 @@ function getAllQuotes(groupNumber=1){
     localStorage.setItem('quotes',newQuotesArray)
     localStorage.setItem('quteCount',0)
     localStorage.setItem('groupCount',groupNumber)
-    return localStorage.getItem('quotes').split('//,');
+    quotes =  localStorage.getItem('quotes').split('//,');
+    return quotes;
   });
 }

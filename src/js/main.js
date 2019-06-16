@@ -25,7 +25,8 @@ document.addEventListener("DOMContentLoaded", function() {
       this.classList.remove("scale-out");
       cardContentQuote.removeEventListener('transitionend',()=>{})
       cardContentQuote.children[0].textContent=quoteData[0];
-      document.querySelector('#content-text-author').textContent=quoteData[1];
+      quoteData[1] && (document.querySelector('#content-text-author').textContent=quoteData[1]);
+      document.querySelector('#content-text-author').style.visibility="visible";
       
     })
     this.children[0].style.animation='load-data-animation 1s';

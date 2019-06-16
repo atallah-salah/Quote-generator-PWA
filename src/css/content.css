@@ -2,8 +2,16 @@
   height: 80% ;
 }
 
+.center-align.row{
+  margin-bottom: 0px;
+}
 .container .row .col.empty{
   visibility: hidden;
+}
+
+
+#card-quote{
+  margin-bottom: 8px;
 }
 
 #menu .waves-ripple{
@@ -12,13 +20,6 @@
   top: 56% !important;
   height: 25% !important;
   width: 25% !important;
-}
-
-.material-icons.load-data-rotate-icon.start{
-  /* animation-name:load-data-animation; */
-  /* animation-duration: 1s; */
-  /* animation-play-state: paused; */
-  /* animation-iteration-count: infinite; */
 }
 
 @keyframes load-data-animation {
@@ -39,12 +40,15 @@
 }
 .card.scale-transition .card-content{
   transition-duration: .4s !important;
-  overflow: scroll;
+  overflow: auto;
 }
 
 #content-text-author{
+  transition-duration: 1s;
+  margin-top: 0px;
   color: white;
   background-color: var(--primary);
   padding:6px;
   border-radius: 2px;
+  visibility: hidden;
 }
