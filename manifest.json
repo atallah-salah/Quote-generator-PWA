@@ -1,0 +1,17 @@
+{
+  "name": "Quote Generator",
+  "short_name": "QuotePWA",
+  "description": "Quote Generator",
+  "lang": "en-US",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#019CB7",
+  "icons": [
+    {
+      "src": "images/homescreen.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "background_color": "#292E2E"
+}
