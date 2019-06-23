@@ -1,6 +1,6 @@
 {
   "name": "Quote Generator",
-  "short_name": "QuotePWA",
+  "short_name": "Quote Generator",
   "description": "Quote Generator",
   "lang": "en-US",
   "start_url": "/",

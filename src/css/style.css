@@ -1,6 +1,9 @@
+/* import css files */
 @import "navbar.css";
 @import "content.css";
+@import "side-menu.css";
 
+/* Define css variables */
 :root{
   --primary: #292E2E;
   --secondary: #019CB7;
