@@ -6,10 +6,19 @@ document.addEventListener("DOMContentLoaded", function() {
   function displayNotification() {
     if (Notification.permission == 'granted') {
       navigator.serviceWorker.getRegistration().then(function(reg) {
-        reg.showNotification('Hello world!');
+        var options = {
+          body: 'Author',
+          vibrate: [100, 50, 100],
+          data: {
+            dateOfArrival: Date.now(),
+            primaryKey: 1
+          }
+        };
+        reg.showNotification('Quote here', options);
       });
     }
   }
+  
 
   var elems = document.querySelectorAll("select");
   var instances = M.FormSelect.init(elems);
@@ -18,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
   let cardContentQuote=cardQuote.querySelector("#card-content-quote");
   let cardClickMenu=document.querySelector("#menu");
 
-  
+
   cardClickMenu.addEventListener("click",  function(){
     displayNotification()
 
