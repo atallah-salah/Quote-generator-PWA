@@ -39,6 +39,9 @@
         navigator.serviceWorker.register('/sw.js');
       })
     }
+    Notification.requestPermission(function(status) {
+      console.log('Notification permission status:', status);
+    });
   </script>
   <!-- top navbar -->
   <nav class="z-depth-0">
