@@ -3,23 +3,6 @@ document.addEventListener("DOMContentLoaded", function() {
   const forms = document.querySelectorAll(".side-menu");
   M.Sidenav.init(forms, { edge: "right" });
 
-  function displayNotification() {
-    if (Notification.permission == 'granted') {
-      navigator.serviceWorker.getRegistration().then(function(reg) {
-        var options = {
-          body: 'Author',
-          vibrate: [200, 100, 200, 100, 200, 100, 200],
-          data: {
-            dateOfArrival: Date.now(),
-            primaryKey: 1
-          }
-        };
-        reg.showNotification('Quote here', options);
-      });
-    }
-  }
-  
-
   var elems = document.querySelectorAll("select");
   var instances = M.FormSelect.init(elems);
 
@@ -29,8 +12,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
   cardClickMenu.addEventListener("click",  function(){
-    displayNotification()
-
     let quoteData = getQuote();
 
     cardQuote.classList.remove("scale-out");
@@ -51,6 +32,54 @@ document.addEventListener("DOMContentLoaded", function() {
   cardClickMenu.children[0].addEventListener('animationend',function() {
     this.style.animation='';
   });
+
+
+
+  function send_message_to_sw(msg){
+    return new Promise(function(resolve, reject){
+        // Create a Message Channel
+        var msg_chan = new MessageChannel();
+
+        // Handler for recieving message reply from service worker
+        msg_chan.port1.onmessage = function(event){
+            if(event.data.error){
+                reject(event.data.error);
+            }else{
+                resolve(event.data);
+            }
+        };
+
+        // Send message to service worker along with port for reply
+        if(navigator.serviceWorker.controller){
+          navigator.serviceWorker.controller.postMessage(msg, [msg_chan.port2]);
+        }else{
+          alert('Please restart the app to use this feature')
+        }
+    });
+  }
+
+
+  document.querySelector('#setReminder').addEventListener('click',()=>{
+    let timeConv={
+      "10 sec test":"10000",
+      "5 min":"300000",
+      "30 min":"1800000",
+      "1 hour":"3600000",
+      "3 hours":"10800000",
+      "off":false
+    }
+
+      if(document.querySelector('.optgroup-option.selected')!==null){
+        send_message_to_sw(timeConv[document.querySelector('.optgroup-option.selected').innerText])
+      }else{
+        send_message_to_sw(timeConv["off"])
+      }
+    
+  })
+
+  
+
+
 
 });
 

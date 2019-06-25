@@ -59,30 +59,26 @@
       <li><a class="waves-effect">Set reminder notification</a></li>
     <!-- dropdown -->
     <li><div class="input-field time-notification">
-      <select>
-        <option data-time="5,m" value="" disabled selected>Choose each</option>
+      <select class="reminderList">
+        <option value="" disabled selected>Choose each</option>
         <optgroup label="minuate">
-        <option data-time="5,s" value="1">5 sec test</option>
-        <option data-time="5,m" value="2">5 min</option>
-        <option data-time="30,m" value="2">30 min</option>
+        <option value="1">10 sec test</option>
+        <option value="2">5 min</option>
+        <option value="2">30 min</option>
       </optgroup>
       <optgroup label="hours">
-        <option data-time="1,h" value="3">1 hour</option>
-        <option data-time="3,h" value="4">3 hours</option>
-        <option data-time="10,h" value="4">10 hours</option>
+        <option value="3">1 hour</option>
+        <option value="4">3 hours</option>
+        <option value="1">off</option>
       </optgroup>
-      <optgroup label="days">
-          <option data-time="1,d" value="3">1 day</option>
-          <option data-time="3,d" value="4">3 days</option>
-          <option data-time="7,d" value="4">7 days</option>
-        </optgroup>
       </select>
     </div></li>
-      <!-- contact icon -->
-      <li><div class="divider"></div></li>
-      <li><a href="/pages/contact.html" class="waves-effect">
-        <i class="material-icons">mail_outline</i>Contact</a>
-      </li>
+    <li><a id="setReminder" class="waves-effect waves-light btn-small">Set reminder</a></li>
+    <!-- contact icon -->
+    <li><div class="divider"></div></li>
+    <li><a href="/pages/contact.html" class="waves-effect">
+      <i class="material-icons">mail_outline</i>Contact</a>
+    </li>
     </ul>
 
     <!-- content -->

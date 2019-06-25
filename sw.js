@@ -5,12 +5,60 @@ workbox.routing.registerRoute(
   workbox.strategies.cacheFirst()
 );
 
+let resRecived=false;
+let reminder=false;
+let count=1;
+let quotes;
+let interval;
+
+const getQuotes= ()=>{
+  if(reminder){
+    interval = setInterval(() => {
+      let randNum=Math.floor(Math.random() * 100);
+      var options = {
+        body: quotes[randNum].quote,
+        vibrate: [200,30,200],
+        data: {
+          dateOfArrival: Date.now(),
+          primaryKey: 1
+        }
+      };
+      resRecived && reminder && self.registration.showNotification(quotes[randNum].author,options)
+    }, reminder);
+  }
+}
+
+self.addEventListener('message', function(event){
+  console.log("SW Received Message: " + event.data,reminder);
+  reminder=event.data;
+  fetch('https://quote-api1.herokuapp.com/'+count)
+  .then(function(response) {
+    return response.json();    
+  })
+  .then(function(res) {
+    quotes = res.map((quote)=>{
+      return {quote:quote.quote  , author:quote.author}
+    })    
+    // resRecived=true;
+    if(event.data===false){
+      interval && clearInterval(interval); // stop the interval
+      resRecived=false;
+      reminder=false;
+    }else{
+      interval && clearInterval(interval); // stop the interval
+      resRecived=true;
+      getQuotes();
+    }
+  });
+});
+
+
 
 
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "d9b6fd4212c5e778f524fd2b04f88c2f"
+    "revision": "822f74d7e881c5749f9335890dc75b0f"
   },
   {
     "url": "README.md",
@@ -18,27 +66,31 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "src-sw.js",
-    "revision": "ed173cf9aee58344198c6ff0892258e4"
+    "revision": "467e7235bdf928ba2cbc6fc0ef4ec4a4"
   },
   {
     "url": "src/css/content.css",
-    "revision": "4718d0adf888fc7c212bb80e8a0e0893"
+    "revision": "a17a8c3f40fc852a7a4097b81be2d2b5"
   },
   {
     "url": "src/css/navbar.css",
     "revision": "2bddfc80f6556d635c5e1e4ce96cbf78"
   },
   {
+    "url": "src/css/side-menu.css",
+    "revision": "3da32c5338d61b8ae4440902a75241cc"
+  },
+  {
     "url": "src/css/style.css",
-    "revision": "4faa87977c7d5597a71232e30fcf86bd"
+    "revision": "ad04ff8e763bfc2ca7bb422c89961e91"
   },
   {
     "url": "src/js/getQuotes.js",
-    "revision": "0f91c25fa6186a784d591fdb7184759b"
+    "revision": "41cfaa60e62ae7823d10fba925b2cae0"
   },
   {
     "url": "src/js/main.js",
-    "revision": "ea70b27663bb09b110d84f6d3322baca"
+    "revision": "19db1b73ce7c85ff56385a3662d71dad"
   },
   {
     "url": "src/lib/jquery/jquery.min.js",
