@@ -1,19 +1,22 @@
 document.addEventListener("DOMContentLoaded", function() {
-  // nav menu
+  // nav menu right-menu
   const forms = document.querySelectorAll(".side-menu");
   M.Sidenav.init(forms, { edge: "right" });
 
   var elems = document.querySelectorAll("select");
-  var instances = M.FormSelect.init(elems);
+  M.FormSelect.init(elems);
 
+  // store html quote nodes
   let cardQuote=document.querySelector("#card-quote")
   let cardContentQuote=cardQuote.querySelector("#card-content-quote");
   let cardClickMenu=document.querySelector("#menu");
 
 
   cardClickMenu.addEventListener("click",  function(){
+    // get new quote
     let quoteData = getQuote();
 
+    // animation
     cardQuote.classList.remove("scale-out");
     cardContentQuote.classList.add("scale-out");
     
@@ -34,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
 
-
+  // send_message_to_sw function used to let serviceworker work with Notification
   function send_message_to_sw(msg){
     return new Promise(function(resolve, reject){
         // Create a Message Channel
@@ -69,17 +72,11 @@ document.addEventListener("DOMContentLoaded", function() {
       "off":false
     }
 
-      if(document.querySelector('.optgroup-option.selected')!==null){
-        send_message_to_sw(timeConv[document.querySelector('.optgroup-option.selected').innerText])
-      }else{
-        send_message_to_sw(timeConv["off"])
-      }
-    
+    if(document.querySelector('.optgroup-option.selected')!==null){
+      send_message_to_sw(timeConv[document.querySelector('.optgroup-option.selected').innerText])
+    }else{
+      send_message_to_sw(timeConv["off"])
+    }
   })
-
-  
-
-
-
 });
 
